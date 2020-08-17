@@ -19,7 +19,7 @@ public class EnemieMovement : MonoBehaviour
 
     public int health = 2;
     public int damage;
-    
+
 
     public int scoreValue = 5;
 
@@ -49,6 +49,7 @@ public class EnemieMovement : MonoBehaviour
                 OnEnemyDeath(this);
             }
             ScoreSystem.score += scoreValue;
+            BalloonsPops.balloonsPop += 1;
             this.gameObject.SetActive(false);
         }
     }

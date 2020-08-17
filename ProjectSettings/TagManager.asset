@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - EG
   - tag
+  - GameUI
   layers:
   - Default
   - TransparentFX

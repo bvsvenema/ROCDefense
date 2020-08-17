@@ -33,6 +33,7 @@ public class BuildManger : MonoBehaviour
     //public Turret turret3;
     public List<Turret> allTurrets = new List<Turret>();
     public List<BuletMovement> allBullets = new List<BuletMovement>();
+    public List<EnemieMovement> allBalloons = new List<EnemieMovement>();
 
     private Turret turretToBuild;
 

@@ -15,8 +15,14 @@ public class BuletMovement : MonoBehaviour
 
     public int bulletDamage;
 
+    AudioSource audio;
+    //public GameObject balloon;
 
 
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
 
     public void seek(Transform _target)
     {
@@ -45,8 +51,11 @@ public class BuletMovement : MonoBehaviour
 
     void HitTarget()
         {
+            //balloon.GetComponent<AudioSource>().Play();
             GameObject effectInstance = (GameObject)Instantiate(impackEffect, transform.position, transform.rotation);
             Destroy(effectInstance, 2f);
+
+        audio.loop(0);
 
             Destroy(gameObject);
             target.GetComponent<EnemieMovement>().health -= bulletDamage; //pass target not as Transform but as EnemieMovement (target.transform would still work)

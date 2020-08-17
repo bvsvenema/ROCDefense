@@ -98,3 +98,4 @@ MonoBehaviour:
   impackEffect: {fileID: 3876835351488436695, guid: fa8e0ac00b4d2004487de32ae1bc3b3f,
     type: 3}
   bulletDamage: 2
+  balloon: {fileID: 5920253803509426343, guid: 43e472203e505314d8360ec0408bf7d8, type: 3}

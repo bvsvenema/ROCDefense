@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public static GameObject deathCanvas;
-    public TextMeshProUGUI Healthtext;
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI healthText2;
     public static bool gameOver = false;
     public static bool oneTimer = false;
 
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private int Health;
+    private int Health = 500;
     public int health
     {
         get { return Health; }
@@ -83,13 +84,14 @@ public class GameManager : MonoBehaviour
             
             Debug.Log(Health);
             UpdateHealth();
+            UpdateHealthEnd();
         }
     }
 
     private void Start()
     {
         //Healthtext = this.GetComponent<TextMeshProUGUI>();
-        Debug.Log(Healthtext.gameObject.name);
+        Debug.Log(healthText.gameObject.name);
     }
 
 
@@ -97,8 +99,13 @@ public class GameManager : MonoBehaviour
 
     public void UpdateHealth()
     {
-        //Healthtext.text = "Health: " + Health;
-        Healthtext.text = "Health: " + Health;
+            //Healthtext.text = "Health: " + Health;
+            healthText.text = "Health: " + Health;
+    }
+
+    public void UpdateHealthEnd()
+    {
+        healthText2.text = "Your Health is: " + Health;
     }
 
     public static void GameOver()
@@ -150,7 +157,7 @@ public class GameManager : MonoBehaviour
         //    Debug.Log("There is a problem!!!! Quitting");
         //    Application.Quit();
         //}
-        Debug.Log(Health);
+        //Debug.Log(Health);
         //Healthtext.SetText("Health: " + Health);
     }
 

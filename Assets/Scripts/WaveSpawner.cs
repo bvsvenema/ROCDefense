@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class WaveSpawner : MonoBehaviour
 {
     public GameObject spawnPoint;
@@ -11,6 +13,8 @@ public class WaveSpawner : MonoBehaviour
     public EnemieMovement blueEnemy;
 
     public GameObject vicotryCanvas;
+
+    public GameObject parentBalloons;
 
     public bool oneTime = false;
 
@@ -212,7 +216,8 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(EnemieMovement _enemy)
     {
-        Instantiate(_enemy, spawnPoint.transform.position, transform.rotation * Quaternion.Euler(-90, 0, 0));
+        var enemy = Instantiate(_enemy, spawnPoint.transform.position, transform.rotation * Quaternion.Euler(-90, 0, 0));
+        enemy.transform.SetParent(parentBalloons.transform);
     }
 
     void SpawnRedEnemy(EnemieMovement incomingEnemy)
@@ -224,16 +229,22 @@ public class WaveSpawner : MonoBehaviour
             //enemyClone.target = incomingEnemy.target;
             //Debug.Log("WUTZ THA MAZZAPAKKING INDEX: " + incomingEnemy.wavePointIndex);
             enemyClone.SetNextWaypoint(incomingEnemy.wavePointIndex);
-         }
+
+            //set balloons to the empty gameobject ("Balloons")
+            enemyClone.transform.SetParent(parentBalloons.transform);
+        }
     }
 
     void SpawnBlueEnemy(EnemieMovement incomingEnemy)
     {
         if (blueEnemy != null)
         {
+            
             EnemieMovement enemyClone = Instantiate(blueEnemy, incomingEnemy.transform.position, transform.rotation * Quaternion.Euler(-90, 0, 0));
             enemyClone.SetNextWaypoint(incomingEnemy.wavePointIndex);
 
+            //set balloons to the empty gameobject ("Balloons")
+            enemyClone.transform.SetParent(parentBalloons.transform);
         }
     }
 

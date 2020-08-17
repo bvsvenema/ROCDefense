@@ -96,6 +96,6 @@ MonoBehaviour:
   speed: 5
   target: {fileID: 0}
   wavePointIndex: 0
-  health: 2
+  health: 1
   damage: 2
   scoreValue: 5
