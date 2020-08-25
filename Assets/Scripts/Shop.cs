@@ -16,6 +16,7 @@ public class Shop : MonoBehaviour
     private void OnEnable()
     {
         BuildManger.TurretBuildEvent += TurretBuild;
+       
     }
 
     private void OnDisable()

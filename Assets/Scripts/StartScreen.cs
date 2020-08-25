@@ -18,6 +18,7 @@ public class StartScreen : MonoBehaviour
     public GameObject QuitPanel;
     public GameObject Game;
     public GameObject startCanvas;
+    public GameObject mainCanvas;
 
     //SELECT PANAL BUTTONS
     public void LevelsButton()
@@ -74,17 +75,20 @@ public class StartScreen : MonoBehaviour
     {
         Game.SetActive(true);
         startCanvas.SetActive(false);
+        mainCanvas.SetActive(true);
     }
      
     public void MediumButton()
     {
         Game.SetActive(true);
         startCanvas.SetActive(false);
+        mainCanvas.SetActive(true);
     }
 
     public void HardButton()
     {
         Game.SetActive(true);
         startCanvas.SetActive(false);
+        mainCanvas.SetActive(true);
     }
 }

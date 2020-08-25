@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class GameManager : MonoBehaviour
 
     public delegate void GameManagerDelegate(int scoreToSet);
     public static GameManagerDelegate OnDifficultyChanged;
+
+    public GameObject maincanvas;
+    public GameObject deathcanvas;
+    public GameObject selectScreen;
+    public GameObject Game;
 
     public enum DifficultyEnum { Easy, Medium, Hard };
     private DifficultyEnum _difficulty;
@@ -79,6 +85,8 @@ public class GameManager : MonoBehaviour
             {
                 GameOver();
                 Debug.Log("death");
+                maincanvas.SetActive(false);
+                deathcanvas.SetActive(true);
                 gameOver = true;
             }
             
@@ -90,6 +98,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        selectScreen.SetActive(true);
+        maincanvas.SetActive(false);
+        Game.SetActive(false);
         //Healthtext = this.GetComponent<TextMeshProUGUI>();
         Debug.Log(healthText.gameObject.name);
     }

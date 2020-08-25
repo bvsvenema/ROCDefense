@@ -20,7 +20,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3913088937647936805, guid: 99d0be229074b52489b37ebd96c01c6b,
     type: 3}
   firePoint: {fileID: 3691075830882902675}
-  turretCost: 250
+  turretCost: 300
 --- !u!1001 &3690411382398817599
 PrefabInstance:
   m_ObjectHideFlags: 0

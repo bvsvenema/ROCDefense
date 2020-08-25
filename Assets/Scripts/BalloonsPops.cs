@@ -24,9 +24,10 @@ public class BalloonsPops : MonoBehaviour
     {
         text = this.GetComponent<TextMeshProUGUI>();
     }
-
+    //update the text in game
     private static void UpdatePops()
     {
+         //check witch gametext to update
         if (GameObject.FindWithTag("GameUI"))
         {
             text.text = "BalloonsPops: " + BalloonsPop;

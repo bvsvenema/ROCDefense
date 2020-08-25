@@ -21,16 +21,18 @@ public class EnemieMovement : MonoBehaviour
     public int damage;
 
 
+
     public int scoreValue = 5;
 
     private void Start()
     {
-        if(target == null)
+        if (target == null)
         {
             target = WayPoints.points[0];
         }
         
     }
+
 
     private void Update()
     {
@@ -79,5 +81,8 @@ public class EnemieMovement : MonoBehaviour
         wavePointIndex = indexToGoTo;
         target = WayPoints.points[wavePointIndex];
     }
+
+
+
 
 }

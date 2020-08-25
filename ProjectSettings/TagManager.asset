@@ -10,6 +10,7 @@ TagManager:
   - EG
   - tag
   - GameUI
+  - Bullet
   layers:
   - Default
   - TransparentFX
