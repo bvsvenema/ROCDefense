@@ -5,13 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Deathscreen : MonoBehaviour
 {
-
-
-    void Update()
-    {
-        if (Input.anyKeyDown)
+    public void BackToMenu()
         {
             SceneManager.LoadScene("SampleScene");
         }
-    }
 }

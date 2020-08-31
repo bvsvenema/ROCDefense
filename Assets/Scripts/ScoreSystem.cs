@@ -9,7 +9,7 @@ public class ScoreSystem : MonoBehaviour
     public static TextMeshProUGUI text;
     public static int Score;
 
-    //when te difficulty chan
+    //when te difficulty change
     private void OnEnable()
     {
         GameManager.OnDifficultyChanged += UpdateScore;

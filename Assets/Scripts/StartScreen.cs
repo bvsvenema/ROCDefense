@@ -8,8 +8,6 @@ public class StartScreen : MonoBehaviour
     //public enum DifficultyEnum { Easy, Medium, Hard };
     //public DifficultyEnum difficulty;
 
-    public GameManager gameManager;
-
     //Panels
     public GameObject StartPanel;
     public GameObject levelsPanel;
@@ -19,12 +17,14 @@ public class StartScreen : MonoBehaviour
     public GameObject Game;
     public GameObject startCanvas;
     public GameObject mainCanvas;
+    public GameObject optionsPanel;
 
     //SELECT PANAL BUTTONS
     public void LevelsButton()
     {
         StartPanel.SetActive(false);
         levelsPanel.SetActive(true);
+        optionsPanel.SetActive(false);
     }
 
     public void QuitButton()
@@ -39,6 +39,13 @@ public class StartScreen : MonoBehaviour
     public void QuitNoButton()
     {
         QuitPanel.SetActive(false);
+    }
+
+    public void OptionsButton()
+    {
+        levelsPanel.SetActive(false);
+        StartPanel.SetActive(false);
+        optionsPanel.SetActive(true);
     }
 
 

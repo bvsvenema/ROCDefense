@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    private bool activateGame = false;
+
     public static GameManager Instance;
 
     public static GameObject deathCanvas;
@@ -20,7 +22,10 @@ public class GameManager : MonoBehaviour
     public GameObject maincanvas;
     public GameObject deathcanvas;
     public GameObject selectScreen;
-    public GameObject Game;
+
+    public GameObject level1;
+    public GameObject level2;
+    
 
     public enum DifficultyEnum { Easy, Medium, Hard };
     private DifficultyEnum _difficulty;
@@ -56,7 +61,7 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            SetDifficulty();
+            //SetDifficulty();
             UpdateHealth();
         }
     }
@@ -85,7 +90,6 @@ public class GameManager : MonoBehaviour
             {
                 GameOver();
                 Debug.Log("death");
-                maincanvas.SetActive(false);
                 deathcanvas.SetActive(true);
                 gameOver = true;
             }
@@ -100,7 +104,7 @@ public class GameManager : MonoBehaviour
     {
         selectScreen.SetActive(true);
         maincanvas.SetActive(false);
-        Game.SetActive(false);
+        level1.SetActive(false);
         //Healthtext = this.GetComponent<TextMeshProUGUI>();
         Debug.Log(healthText.gameObject.name);
     }
@@ -132,48 +136,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetDifficulty()
-    {
-        switch (difficulty)
-        {
-            case DifficultyEnum.Easy:
-                Health = 10;
-                break;
-            case DifficultyEnum.Medium:
-                Health = 7;
-                break;
-            case DifficultyEnum.Hard:
-                Health = 5;
-                break;
-
-            default:
-                Debug.Log("Something went wrong");
-                break;
-        }
-
-        //if (difficulty == StartScreen.DifficultyEnum.Easy)
-        //{
-        //    Health = 10;
-        //}
-        //else if (difficulty == StartScreen.DifficultyEnum.Medium)
-        //{
-        //    Health = 7;
-        //}
-        //else if (difficulty == StartScreen.DifficultyEnum.Hard)
-        //{
-        //    Health = 5;
-        //}
-        //else
-        //{
-        //    Debug.Log("There is a problem!!!! Quitting");
-        //    Application.Quit();
-        //}
-        //Debug.Log(Health);
-        //Healthtext.SetText("Health: " + Health);
-    }
 
     public void EasyButton()
     {
+        activateGame = true;
+        
         difficulty = DifficultyEnum.Easy;
     }
 
@@ -186,4 +153,5 @@ public class GameManager : MonoBehaviour
     {
         difficulty = DifficultyEnum.Hard;
     }
+
 }
